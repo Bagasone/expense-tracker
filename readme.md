@@ -64,7 +64,7 @@ const dailyExpenses = [
 - id → unik untuk identifikasi.
 - name → nama barang/jasa (string).
 - price → harga barang (number, > 0).
-- quantity → jumlah barang (number, > 1).
+- quantity → jumlah barang (number, > 0).
 - time → waktu pembelian (string/Date).
 
 3. Aturan Tambahan

@@ -37,7 +37,7 @@ const dailyExpense = [
 ];
 
 // Total expense
-const totalExpend = dailyExpense.reduce((acc, currVal) => acc + currVal.price * currVal.quantity, (acc = 0));
+const totalExpend = dailyExpense.reduce((acc, currVal) => acc + currVal.price * currVal.quantity, 0);
 
 // Print data in the structured way
 console.log('User:', userName);
