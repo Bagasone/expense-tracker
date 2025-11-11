@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Expense Tracker V1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Expense Tracker (V1)</h1>
+
+    <section class="card form-card">
+      <form id="expense-form">
+        <div class="row">
+          <label>
+            Name
+            <input type="text" id="name" required />
+          </label>
+
+          <label>
+            Category
+            <select id="category">
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="row">
+          <label>
+            Quantity
+            <input type="number" id="qty" min="1" value="1" required />
+          </label>
+
+          <label>
+            Price
+            <input type="number" id="price" min="0" step="1" value="0" required />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Add Expense</button>
+        </div>
+        <p id="form-error" class="error" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card summary-card">
+      <h2>Today</h2>
+      <p>Total: <strong id="today-total">Rp0</strong></p>
+      <p>Expenses: <span id="expense-count">0</span></p>
+    </section>
+
+    <section class="card list-card">
+      <h2>All expenses</h2>
+      <ul id="expense-list" class="expense-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+
+</html>

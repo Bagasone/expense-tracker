@@ -1,0 +1,372 @@
+@media screen and (max-width: 1024px) {
+
+    #root {
+        gap: var(--size-3xl);
+        padding: var(--size-xl) var(--size-8xl);
+    }
+
+    /* Header */
+    .header .icon {
+        width: var(--size-6xl);
+        height: var(--size-6xl);
+    }
+
+    .header .title {
+        font-size: var(--size-5xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-base);
+    }
+
+    /* Main */
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-xl);
+    }
+
+    .main .info__total {
+        font-size: var(--size-4xl);
+        margin: var(--size-xs) 0;
+    }
+
+    .main .icon {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+    }
+
+    /* Form Expenses */
+    .main .form-title {
+        gap: var(--size-base);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    /* List Expenses */
+    .list-title {
+        font-size: var(--size2xl);
+    }
+
+    .lists {
+        max-height: calc(var(--size-10xl) * 2 + var(--size-4xl));
+        padding: var(--size-xxs) var(--size-xl);
+    }
+
+    /* Edit card */
+    .modal-edit {
+        padding: var(--size-xl);
+    }
+
+    .modal-edit .form-title {
+        gap: var(--size-sm);
+
+        font-size: var(--size-2xl);
+    }
+
+    .modal-edit .form-title .icon,
+    .modal-edit .btn-close {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    .modal-edit .btn-close {
+        width: calc(var(--size-4xl) - .5rem);
+        height: calc(var(--size-4xl) - .5rem);
+
+        font-size: var(--size-xl);
+
+        right: var(--size-xl);
+        top: var(--size-base);
+    }
+
+    /* Empty */
+    .empty {
+        font-size: var(--size-xl);
+
+    }
+
+}
+
+@media screen and (max-width: 769px) {
+
+    #root {
+        gap: var(--size-3xl);
+        padding: var(--size-xl) var(--size-7xl);
+    }
+
+    /* Header */
+    .header .icon {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+    }
+
+    .header .title {
+        font-size: var(--size-4xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-base);
+
+        width: 80%;
+    }
+
+    /* Main */
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-lg);
+    }
+
+    .main .info__total {
+        font-size: var(--size-3xl);
+        margin: var(--size-xs) 0;
+    }
+
+    .main .icon {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    /* Form Expenses */
+    .main .form-title {
+        gap: var(--size-sm);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    /* List Expenses */
+    .list-title {
+        font-size: var(--size-xl);
+    }
+
+    .lists {
+        max-height: calc(var(--size-10xl) * 2 + var(--size-3xl));
+        padding: var(--size-xxs) var(--size-xl);
+    }
+
+    /* Edit card */
+    .modal-edit {
+        padding: var(--size-lg);
+    }
+
+    .modal-edit .form-title {
+        gap: var(--size-sm);
+
+        font-size: var(--size-xl);
+    }
+
+    .modal-edit .form-title .icon,
+    .modal-edit .btn-close {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    .modal-edit .btn-close {
+        width: calc(var(--size-3xl) - .3rem);
+        height: calc(var(--size-3xl) - .3rem);
+
+        font-size: var(--size-lg);
+
+        right: var(--size-xl);
+        top: var(--size-base);
+    }
+
+    /* Empty */
+    .empty {
+        font-size: var(--size-lg);
+
+    }
+
+}
+
+@media screen and (max-width: 678px) {
+
+    #root {
+        gap: var(--size-3xl);
+        padding: var(--size-xl) var(--size-6xl);
+    }
+
+    /* Header */
+    .header .icon {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+    }
+
+    .header .title {
+        font-size: var(--size-4xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-base);
+
+        width: 80%;
+    }
+
+    /* Main */
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-lg);
+    }
+
+    .main .info__total {
+        font-size: var(--size-3xl);
+        margin: var(--size-xs) 0;
+    }
+
+    .main .icon {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    /* Form Expenses */
+    .main .form-title {
+        gap: var(--size-sm);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    /* List Expenses */
+    .list-title {
+        font-size: var(--size-xl);
+    }
+
+    .lists {
+        max-height: calc(var(--size-10xl) * 2 + var(--size-3xl));
+        padding: var(--size-xxs) var(--size-xl);
+    }
+
+    /* Edit card */
+    .modal-edit {
+        padding: var(--size-lg);
+    }
+
+    .modal-edit .form-title {
+        gap: var(--size-sm);
+
+        font-size: var(--size-xl);
+    }
+
+    .modal-edit .form-title .icon,
+    .modal-edit .btn-close {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    .modal-edit .btn-close {
+        width: calc(var(--size-3xl) - .3rem);
+        height: calc(var(--size-3xl) - .3rem);
+
+        font-size: var(--size-lg);
+
+        right: var(--size-xl);
+        top: var(--size-base);
+    }
+
+    /* Empty */
+    .empty {
+        font-size: var(--size-lg);
+
+    }
+
+}
+
+@media screen and (max-width: 478px) {
+
+    #root {
+        gap: var(--size-2xl);
+        padding: var(--size-xl) var(--size-5xl);
+    }
+
+    /* Header */
+    .header .icon {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    .header .title {
+        font-size: var(--size-3xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-sm);
+
+        width: 80%;
+    }
+
+    /* Main */
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-base);
+    }
+
+    .main .info__total {
+        font-size: var(--size-xl);
+        margin: var(--size-xxs) 0;
+    }
+
+    .main .icon {
+        width: var(--size-3xl);
+        height: var(--size-3xl);
+    }
+
+    /* Form Expenses */
+    .main .form-title {
+        gap: var(--size-xs);
+    }
+
+    /* List Expenses */
+    .list-title {
+        font-size: var(--size-lg);
+    }
+
+    .lists {
+        max-height: calc(var(--size-10xl) * 2 + var(--size-xl));
+        padding: var(--size-xxs) var(--size-lg);
+    }
+
+    /* Edit card */
+    .modal-edit {
+        padding: var(--size-base);
+    }
+
+    .modal-edit .form-title {
+        gap: var(--size-xs);
+
+        font-size: var(--size-lg);
+    }
+
+    .modal-edit .form-title .icon,
+    .modal-edit .btn-close {
+        width: var(--size-2xl);
+        height: var(--size-2xl);
+    }
+
+    .modal-edit .btn-close {
+        width: calc(var(--size-2xl) - .1rem);
+        height: calc(var(--size-2xl) - .1rem);
+
+        font-size: var(--size-base);
+
+        right: var(--size-lg);
+        top: var(--size-sm);
+    }
+
+    /* Empty */
+    .empty {
+        font-size: var(--size-base);
+
+    }
+
+}

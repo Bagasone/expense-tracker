@@ -4,8 +4,8 @@
 
 ### 💸 Expense Tracker V.1 & 🎯 Description
 
-Expense Tracker V.1 adalah project sederhana untuk belajar fundamental JavaScript (Vanilla) dengan membangun aplikasi pencatat pengeluaran harian.
-Fokus utama ada pada pemahaman konsep dasar JS (variabel, operator, function, object, array, loop, control flow) sambil melatih logika berpikir komputasional.
+Expense Tracker V.1 adalah project sederhana untuk belajar fundamental JavaScript (Vanilla) berbasis project berupa aplikasi pencatat pengeluaran harian.
+Fokus utamanya untuk melatih pemahaman mengenai konsep-konsep dasar JS seperti variabel, operator, function, object, array, loop, dan control flow, sambil melatih logika berpikir komputasional.
 
 Versi pertama (V.1) ini sengaja dibatasi pada level paling sederhana:
 
@@ -20,20 +20,22 @@ Versi pertama (V.1) ini sengaja dibatasi pada level paling sederhana:
 
 ### ⚙️ Main Features:
 
-- Tambah pengeluaran (nama + jumlah).
-- Lihat daftar pengeluaran hari itu.
+- Tambah pengeluaran (name, price, quantity, category).
+- Lihat daftar pengeluaran hanya hari itu saja.
 - Hitung total pengeluaran per hari.
 - Validasi Input:
   - Nama barang/jasa tidak boleh kosong.
+  - Harga barang/jasa harus lebih dari nol.
   - Jumlah harus berupa angka positif.
+  - Kategori tidak boleh kosong dan harus tepat.
 - Manipulasi Data:
   - Hapus data pengeluaran.
-  - (Optional) Edit data pengeluaran.
+  - Edit data pengeluaran.
 - UI:
-  - Basic styling (HTML + CSS dari Step-1).
+  - Basic styling (HTML + CSS sederhana).
   - Mobile-friendly dasar (simple flex/grid).
 
-### 🗂️ Dat Structure Rules
+### 🗂️ Data Structure Rules
 
 1. Representasi Data (Daily Expenses)
 
@@ -44,17 +46,19 @@ Versi pertama (V.1) ini sengaja dibatasi pada level paling sederhana:
 const dailyExpenses = [
   {
     id: 1, // unique identifier (timestamp atau incremental)
-    name: 'Nasi Goreng', // nama barang/jasa
-    price: 20000, // harga per unit (number, >0)
-    quantity: 2, // jumlah unit/barang (number, >0)
-    time: '2025-09-28T12:30:00', // ISO string (opsional, untuk sorting/filter)
+    name: 'Nasi Goreng', // Nama barang/jasa (string, tidak boleh kosong)
+    price: 20000, // Harga per unit (number, > 0)
+    quantity: 2, // Jumlah unit/barang (number, > 0)
+    date: '2025-09-28T12:30:00', // ISO string (date, untuk sorting/filter pada V.2)
+    category: 'Makanan', // Kategori dari barang/jasa (string, tidak boleh kosong)
   },
   {
     id: 2,
     name: 'Kopi',
     price: 15000,
     quantity: 1,
-    time: '2025-09-28T15:00:00',
+    date: '2025-09-28T15:00:00',
+    category: 'Minuman',
   },
 ];
 ```
@@ -62,10 +66,11 @@ const dailyExpenses = [
 2. Struktur Object Pengeluaran
 
 - id → unik untuk identifikasi.
-- name → nama barang/jasa (string).
+- name → nama barang/jasa (string, tidak boleh kosong).
 - price → harga barang (number, > 0).
 - quantity → jumlah barang (number, > 0).
-- time → waktu pembelian (string/Date).
+- date → waktu pembelian (Date, otomatis sesuai waktu device).
+- category → kategori barang/jasa (string, tidak boleh kosong).
 
 3. Aturan Tambahan
 
@@ -85,7 +90,7 @@ Roadmap ini incremental (Step-1 → Step-5).
 
 - Step-2 — Add Expense (form → memory)
 
-  - Buat form input (nama, jumlah).
+  - Buat form input (name, price, quantity, category).
   - Tambahkan input ke array dailyExpenses.
 
 - Step-3 — Render List & Total
