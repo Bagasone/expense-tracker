@@ -11,7 +11,15 @@ const dailyExpenses = [
     name: 'Coffee',
     category: 'food',
     qty: 3,
-    price: 10000,
+    price: 10_000,
+    date: new Date(),
+  },
+  {
+    id: Date.now() + 1,
+    name: 'Pizza',
+    category: 'food',
+    qty: 2,
+    price: 100_000,
     date: new Date(),
   },
 ];
@@ -186,15 +194,17 @@ function generateListItem({ name, category, qty, price, date, id }) {
                     <span class="list-category border shadow-sm">${category}</span>
                 </div>
                 <div class="list-details">
-                    <span class="list-qty">Quantity: <span>${qty}</span></span>
-                    <span class="list-price">Price: <span>${currencyFormat(
+                    <div class="list-qty">Quantity: <span>${qty}</span></div>
+                    <div class="list-price">Price: <span>${currencyFormat(
                       price
-                    )}</span></span>
-                    <span class="list-date">Date: <span>${timeFormat(
+                    )}</span></div>
+                    <div class="list-date">Date: <span>${timeFormat(
                       date
-                    )}</span></span>
+                    )}</span></div>
                 </div>
-                <p class="list-total">Total: ${currencyFormat(qty * price)}</p>
+                <div class="list-total">Total: <span>
+                ${currencyFormat(qty * price)}</span>
+                </div>
             </div>
             <div class="list-actions">
                 <button data-id=${id} class="btn btn-edit border shadow-sm">

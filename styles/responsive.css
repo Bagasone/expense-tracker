@@ -1,14 +1,482 @@
-@media screen and (max-width: 1024px) {
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-2xl);
 
+    background-color: var(--clr-white);
+
+    padding: var(--size-xl) var(--size-4xl);
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-xl);
+
+    width: 100%;
+    height: 100%;
+}
+
+.header .icon {
+    width: var(--size-5xl);
+    height: var(--size-5xl);
+}
+
+.header .title {
+    font-size: var(--size-3xl);
+    font-weight: 1000;
+    font-family: "Poppins", sans-serif;
+
+    text-align: center;
+}
+
+.header .desc {
+    font-size: var(--size-base);
+    font-weight: 500;
+
+    text-align: center;
+
+    width: 80%;
+}
+
+/* Main */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-3xl);
+
+    width: 100%;
+    height: 100%;
+}
+
+/* Total Expenses */
+.main .info-container {
+    background-color: var(--clr-violet);
+    color: var(--clr-white);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main .info__title {
+    text-align: start;
+
+    font-size: var(--size-lg);
+}
+
+.main .info__total {
+    font-family: "Poppins", sans-serif;
+    font-size: var(--size-2xl);
+    font-weight: 700;
+
+    margin: var(--size-xxs) 0;
+}
+
+.main .info__amount {
+    font-weight: 300;
+}
+
+.main .icon {
+    width: var(--size-3xl);
+    height: var(--size-3xl);
+}
+
+/* Form Expenses */
+.main .form-title {
+    display: flex;
+    align-items: center;
+    gap: var(--size-base);
+
+    font-size: var(--size-2xl);
+}
+
+.main .form-label {
+    font-size: var(--size-base);
+}
+
+.main .form-input {
+    font-size: var(--size-base);
+}
+
+.main .form-input:focus {
+    outline: .1rem solid var(--clr-green);
+}
+
+.main .form-container .icon-container {
+    width: var(--size-4xl);
+    height: var(--size-4xl);
+
+    padding: 0rem;
+}
+
+.main .form-container .icon-container img {
+    filter: none;
+}
+
+.main .form-btn {
+    background-color: var(--clr-green);
+
+    font-size: var(--size-lg);
+}
+
+.main .form-btn i {
+    font-size: var(--size-xl);
+}
+
+/* List Expenses */
+.lists-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: var(--size-base);
+
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.list-title {
+    font-size: var(--size-2xl);
+    font-weight: 800;
+
+    text-align: start;
+
+    margin-bottom: var(--size-vxs);
+}
+
+.lists {
+    /* Variables */
+    --gap: var(--size-xl);
+    --space: var(--size-vxs);
+    --max-height: calc(var(--size-10xl) + 50%);
+    --parent-height: calc(50vh + var(--gap) * 2);
+
+    /* Styles */
+    width: 100%;
+    height: max-content;
+    max-height: var(--parent-height);
+    gap: var(--gap);
+
+    padding: var(--space) calc((var(--space) * 2));
+
+    scrollbar-width: none;
+    overflow: scroll;
+}
+
+.list-item {
+    max-height: var(--max-height);
+}
+
+.list-name {
+    font-size: var(--size-xl);
+}
+
+.list-category {
+    font-size: var(--size-lg);
+}
+
+.list-details div {
+    font-size: var(--size-base);
+}
+
+.list-total {
+    font-size: var(--size-xl);
+}
+
+.list-actions .btn {
+    font-size: var(--size-lg);
+
+    margin-bottom: var(--size-vxs);
+}
+
+/* Edit card */
+.modal-edit {
+    padding: var(--size-sm) var(--size-base);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    width: 90%;
+
+    transform: translate(-50%, -50%);
+}
+
+.modal-edit .form-title {
+    display: flex;
+    align-items: center;
+    gap: var(--size-sm);
+
+    font-size: var(--size-2xl);
+}
+
+.modal-edit .form-title .icon,
+.modal-edit .btn-close {
+    width: var(--size-4xl);
+    height: var(--size-4xl);
+
+    padding: var(--size-vxs);
+    margin: var(--size-sm) 0;
+
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-edit .btn-close {
+    background-color: var(--clr-tomato);
+
+    position: absolute;
+
+    width: calc(var(--size-4xl) - var(--size-vxs));
+    height: calc(var(--size-4xl) - var(--size-vxs));
+
+    font-size: var(--size-xl);
+
+    right: var(--size-sm);
+    top: 0;
+}
+
+.modal-edit .form-input:focus {
+    outline: .1rem solid var(--clr-blue);
+}
+
+.modal-edit .form-label {
+    font-size: var(--size-base);
+}
+
+.modal-edit .form-input {
+    font-size: var(--size-base);
+}
+
+.modal-edit .form-btn {
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+
+
+    font-size: var(--size-lg);
+}
+
+/* Empty */
+.empty-card {
+    padding: var(--size-sm);
+
+    height: max-content;
+
+    text-transform: capitalize;
+}
+
+.empty {
+    font-size: var(--size-2xl);
+    font-weight: 800;
+
+    text-align: center;
+}
+
+@media screen and (min-width: 467px) {
     #root {
         gap: var(--size-3xl);
-        padding: var(--size-xl) var(--size-8xl);
+
+        padding: var(--size-2xl) var(--size-6xl);
     }
 
     /* Header */
+    .header {
+        gap: var(--size-xl);
+    }
+
     .header .icon {
         width: var(--size-6xl);
         height: var(--size-6xl);
+    }
+
+    .header .title {
+        font-size: var(--size-4xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-lg);
+        width: 90%;
+    }
+
+    /* Main */
+    .main {
+        gap: var(--size-4xl);
+    }
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-xl);
+    }
+
+    .main .info__total {
+        font-size: var(--size-3xl);
+    }
+
+    .main .icon {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+    }
+
+    /* Form Expenses */
+    .main .form-title {
+        gap: var(--size-lg);
+
+        font-size: var(--size-3xl);
+    }
+
+    .main .form-label {
+        font-size: var(--size-lg);
+    }
+
+    .main .form-input {
+        font-size: var(--size-lg);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+    }
+
+    .main .form-btn {
+        font-size: var(--size-xl);
+    }
+
+    .main .form-btn i {
+        font-size: var(--size-2xl);
+    }
+
+    /* List Expenses */
+    .lists-container {
+        gap: var(--size-lg);
+    }
+
+    .list-title {
+        font-size: var(--size-3xl);
+
+        margin-bottom: var(--size-sm);
+    }
+
+    .lists {
+        --gap: var(--size-2xl);
+        --space: var(--size-xxs);
+        --max-height: calc(var(--size-10xl) + 50%);
+        --parent-height: calc(55vh + var(--gap) * 2);
+    }
+
+    .list-name {
+        font-size: var(--size-2xl);
+    }
+
+    .list-category {
+        font-size: var(--size-xl);
+    }
+
+    .list-details div {
+        font-size: var(--size-lg);
+    }
+
+    .list-total {
+        font-size: var(--size-2xl);
+    }
+
+    .list-actions .btn {
+        font-size: var(--size-xl);
+
+        margin-bottom: var(--size-xxs);
+    }
+
+    /* Edit card */
+    .modal-edit {
+        padding: var(--size-sm) var(--size-base);
+
+        width: 80%;
+    }
+
+    .modal-edit .form-title {
+        gap: var(--size-base);
+
+        font-size: var(--size-4xl);
+    }
+
+    .modal-edit .form-title .icon,
+    .modal-edit .btn-close {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+
+        padding: var(--size-vxs);
+        margin: var(--size-sm) 0;
+    }
+
+    .modal-edit .btn-close {
+        width: calc(var(--size-5xl) - var(--size-xxs));
+        height: calc(var(--size-5xl) - var(--size-xxs));
+
+        font-size: var(--size-xl);
+
+        right: var(--size-sm);
+        top: 0;
+    }
+
+    .modal-edit .form-label {
+        font-size: var(--size-lg);
+    }
+
+    .modal-edit .form-input {
+        font-size: var(--size-lg);
+    }
+
+    .modal-edit .form-btn {
+        font-size: var(--size-xl);
+    }
+
+    /* Empty */
+    .empty-card {
+        padding: var(--size-sm);
+    }
+
+    .empty {
+        font-size: var(--size-3xl);
+    }
+}
+
+@media screen and (min-width: 578px) {
+    #root {
+        gap: var(--size-4xl);
+
+        padding: var(--size-3xl) var(--size-8xl);
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    /* Header */
+    .header {
+        gap: var(--size-2xl);
+    }
+
+    .header .icon {
+        width: var(--size-7xl);
+        height: var(--size-7xl);
     }
 
     .header .title {
@@ -16,357 +484,259 @@
     }
 
     .header .desc {
-        font-size: var(--size-base);
+        font-size: var(--size-xl);
+        width: 90%;
     }
 
     /* Main */
+    .main {
+        gap: var(--size-5xl);
+    }
 
     /* Total Expenses */
     .main .info__title {
-        font-size: var(--size-xl);
-    }
-
-    .main .info__total {
-        font-size: var(--size-4xl);
-        margin: var(--size-xs) 0;
-    }
-
-    .main .icon {
-        width: var(--size-5xl);
-        height: var(--size-5xl);
-    }
-
-    /* Form Expenses */
-    .main .form-title {
-        gap: var(--size-base);
-    }
-
-    .main .form-container .icon-container {
-        width: var(--size-4xl);
-        height: var(--size-4xl);
-    }
-
-    /* List Expenses */
-    .list-title {
-        font-size: var(--size2xl);
-    }
-
-    .lists {
-        max-height: calc(var(--size-10xl) * 2 + var(--size-4xl));
-        padding: var(--size-xxs) var(--size-xl);
-    }
-
-    /* Edit card */
-    .modal-edit {
-        padding: var(--size-xl);
-    }
-
-    .modal-edit .form-title {
-        gap: var(--size-sm);
-
         font-size: var(--size-2xl);
     }
 
-    .modal-edit .form-title .icon,
-    .modal-edit .btn-close {
-        width: var(--size-4xl);
-        height: var(--size-4xl);
+    .main .info__total {
+        font-size: var(--size-4xl);
     }
 
-    .modal-edit .btn-close {
-        width: calc(var(--size-4xl) - .5rem);
-        height: calc(var(--size-4xl) - .5rem);
-
-        font-size: var(--size-xl);
-
-        right: var(--size-xl);
-        top: var(--size-base);
-    }
-
-    /* Empty */
-    .empty {
-        font-size: var(--size-xl);
-
-    }
-
-}
-
-@media screen and (max-width: 769px) {
-
-    #root {
-        gap: var(--size-3xl);
-        padding: var(--size-xl) var(--size-7xl);
-    }
-
-    /* Header */
-    .header .icon {
+    .main .icon {
         width: var(--size-5xl);
         height: var(--size-5xl);
     }
 
-    .header .title {
-        font-size: var(--size-4xl);
-    }
-
-    .header .desc {
-        font-size: var(--size-base);
-
-        width: 80%;
-    }
-
-    /* Main */
-
-    /* Total Expenses */
-    .main .info__title {
-        font-size: var(--size-lg);
-    }
-
-    .main .info__total {
-        font-size: var(--size-3xl);
-        margin: var(--size-xs) 0;
-    }
-
-    .main .icon {
-        width: var(--size-4xl);
-        height: var(--size-4xl);
-    }
-
     /* Form Expenses */
-    .main .form-title {
-        gap: var(--size-sm);
-    }
+    .main .form-container {
+        grid-template-columns: repeat(2, 1fr);
 
-    .main .form-container .icon-container {
-        width: var(--size-3xl);
-        height: var(--size-3xl);
-    }
-
-    /* List Expenses */
-    .list-title {
-        font-size: var(--size-xl);
-    }
-
-    .lists {
-        max-height: calc(var(--size-10xl) * 2 + var(--size-3xl));
-        padding: var(--size-xxs) var(--size-xl);
-    }
-
-    /* Edit card */
-    .modal-edit {
-        padding: var(--size-lg);
-    }
-
-    .modal-edit .form-title {
-        gap: var(--size-sm);
-
-        font-size: var(--size-xl);
-    }
-
-    .modal-edit .form-title .icon,
-    .modal-edit .btn-close {
-        width: var(--size-3xl);
-        height: var(--size-3xl);
-    }
-
-    .modal-edit .btn-close {
-        width: calc(var(--size-3xl) - .3rem);
-        height: calc(var(--size-3xl) - .3rem);
-
-        font-size: var(--size-lg);
-
-        right: var(--size-xl);
-        top: var(--size-base);
-    }
-
-    /* Empty */
-    .empty {
-        font-size: var(--size-lg);
-
-    }
-
-}
-
-@media screen and (max-width: 678px) {
-
-    #root {
-        gap: var(--size-3xl);
-        padding: var(--size-xl) var(--size-6xl);
-    }
-
-    /* Header */
-    .header .icon {
-        width: var(--size-5xl);
-        height: var(--size-5xl);
-    }
-
-    .header .title {
-        font-size: var(--size-4xl);
-    }
-
-    .header .desc {
-        font-size: var(--size-base);
-
-        width: 80%;
-    }
-
-    /* Main */
-
-    /* Total Expenses */
-    .main .info__title {
-        font-size: var(--size-lg);
-    }
-
-    .main .info__total {
-        font-size: var(--size-3xl);
-        margin: var(--size-xs) 0;
-    }
-
-    .main .icon {
-        width: var(--size-4xl);
-        height: var(--size-4xl);
-    }
-
-    /* Form Expenses */
-    .main .form-title {
-        gap: var(--size-sm);
-    }
-
-    .main .form-container .icon-container {
-        width: var(--size-3xl);
-        height: var(--size-3xl);
-    }
-
-    /* List Expenses */
-    .list-title {
-        font-size: var(--size-xl);
-    }
-
-    .lists {
-        max-height: calc(var(--size-10xl) * 2 + var(--size-3xl));
-        padding: var(--size-xxs) var(--size-xl);
-    }
-
-    /* Edit card */
-    .modal-edit {
-        padding: var(--size-lg);
-    }
-
-    .modal-edit .form-title {
-        gap: var(--size-sm);
-
-        font-size: var(--size-xl);
-    }
-
-    .modal-edit .form-title .icon,
-    .modal-edit .btn-close {
-        width: var(--size-3xl);
-        height: var(--size-3xl);
-    }
-
-    .modal-edit .btn-close {
-        width: calc(var(--size-3xl) - .3rem);
-        height: calc(var(--size-3xl) - .3rem);
-
-        font-size: var(--size-lg);
-
-        right: var(--size-xl);
-        top: var(--size-base);
-    }
-
-    /* Empty */
-    .empty {
-        font-size: var(--size-lg);
-
-    }
-
-}
-
-@media screen and (max-width: 478px) {
-
-    #root {
         gap: var(--size-2xl);
-        padding: var(--size-xl) var(--size-5xl);
     }
 
-    /* Header */
-    .header .icon {
-        width: var(--size-4xl);
-        height: var(--size-4xl);
+    .main .form-title {
+        gap: var(--size-xl);
+
+        grid-column: span 2;
+
+        font-size: var(--size-4xl);
     }
 
-    .header .title {
+    .main .form-label {
+        font-size: var(--size-2xl);
+    }
+
+    .main .form-input {
+        font-size: var(--size-xl);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+    }
+
+    .main .form-btn {
+        font-size: var(--size-2xl);
+
+        grid-column: span 2;
+    }
+
+    .main .form-btn i {
         font-size: var(--size-3xl);
     }
 
-    .header .desc {
-        font-size: var(--size-sm);
-
-        width: 80%;
-    }
-
-    /* Main */
-
-    /* Total Expenses */
-    .main .info__title {
-        font-size: var(--size-base);
-    }
-
-    .main .info__total {
-        font-size: var(--size-xl);
-        margin: var(--size-xxs) 0;
-    }
-
-    .main .icon {
-        width: var(--size-3xl);
-        height: var(--size-3xl);
-    }
-
-    /* Form Expenses */
-    .main .form-title {
-        gap: var(--size-xs);
-    }
-
     /* List Expenses */
+    .lists-container {
+        gap: var(--size-xl);
+    }
+
     .list-title {
-        font-size: var(--size-lg);
+        font-size: var(--size-4xl);
+
+        margin-bottom: var(--size-base);
     }
 
     .lists {
-        max-height: calc(var(--size-10xl) * 2 + var(--size-xl));
-        padding: var(--size-xxs) var(--size-lg);
+        --gap: var(--size-3xl);
+        --space: var(--size-xs);
+        --max-height: calc(var(--size-10xl) + 50%);
+        --parent-height: calc(60vh + var(--gap) * 2);
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .list-name {
+        font-size: var(--size-2xl);
+    }
+
+    .list-category {
+        font-size: var(--size-xl);
+    }
+
+    .list-details div {
+        font-size: var(--size-lg);
+    }
+
+    .list-total {
+        font-size: var(--size-2xl);
+    }
+
+    .list-actions .btn {
+        font-size: var(--size-xl);
+
+        margin-bottom: var(--size-xxs);
     }
 
     /* Edit card */
     .modal-edit {
-        padding: var(--size-base);
+        padding: var(--size-sm) var(--size-base);
+
+        width: 80%;
+    }
+
+    .modal-edit .form-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .modal-edit .form-title {
-        gap: var(--size-xs);
+        gap: var(--size-base);
 
-        font-size: var(--size-lg);
+        grid-column: span 2;
+
+        font-size: var(--size-4xl);
     }
 
     .modal-edit .form-title .icon,
     .modal-edit .btn-close {
-        width: var(--size-2xl);
-        height: var(--size-2xl);
+        width: var(--size-5xl);
+        height: var(--size-5xl);
+
+        padding: var(--size-vxs);
+        margin: var(--size-sm) 0;
     }
 
     .modal-edit .btn-close {
-        width: calc(var(--size-2xl) - .1rem);
-        height: calc(var(--size-2xl) - .1rem);
+        width: calc(var(--size-5xl) - var(--size-xxs));
+        height: calc(var(--size-5xl) - var(--size-xxs));
 
-        font-size: var(--size-base);
+        font-size: var(--size-xl);
 
-        right: var(--size-lg);
-        top: var(--size-sm);
+        right: var(--size-sm);
+        top: 0;
+    }
+
+    .modal-edit .form-label {
+        font-size: var(--size-lg);
+    }
+
+    .modal-edit .form-input {
+        font-size: var(--size-lg);
+    }
+
+    .modal-edit .form-btn {
+        font-size: var(--size-xl);
+
+        grid-column: span 2;
     }
 
     /* Empty */
-    .empty {
-        font-size: var(--size-base);
+    .empty-card {
+        padding: var(--size-base);
 
+        grid-column: span 2;
     }
 
+    .empty {
+        font-size: var(--size-4xl);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #root {
+        gap: var(--size-5xl);
+
+        padding: var(--size-4xl) var(--size-10xl);
+    }
+
+    /* Header */
+    .header .icon {
+        width: var(--size-8xl);
+        height: var(--size-8xl);
+    }
+
+    .header .title {
+        font-size: var(--size-6xl);
+    }
+
+    .header .desc {
+        font-size: var(--size-2xl);
+        width: 90%;
+    }
+
+    /* Main */
+    .main {
+        gap: var(--size-6xl);
+    }
+
+    /* Total Expenses */
+    .main .info__title {
+        font-size: var(--size-3xl);
+    }
+
+    .main .info__total {
+        font-size: var(--size-5xl);
+    }
+
+    .main .icon {
+        width: var(--size-6xl);
+        height: var(--size-6xl);
+    }
+
+    /* Form Expenses */
+    .main .form-label {
+        font-size: var(--size-3xl);
+    }
+
+    .main .form-container .icon-container {
+        width: var(--size-6xl);
+        height: var(--size-6xl);
+    }
+
+    .main .form-btn {
+        font-size: var(--size-3xl);
+    }
+
+    .main .form-btn i {
+        font-size: var(--size-3xl);
+    }
+
+    /* List Expenses */
+
+    .list-title {
+        font-size: var(--size-5xl);
+
+        margin-bottom: var(--size-base);
+    }
+
+    .lists {
+        --gap: var(--size-3xl);
+        --space: var(--size-xs);
+        --max-height: calc(var(--size-10xl) + 50%);
+        --parent-height: calc(100vh + var(--gap) * 2);
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Empty */
+    .empty-card {
+        padding: var(--size-xl);
+
+        grid-column: span 3;
+    }
+
+    .empty {
+        font-size: var(--size-5xl);
+    }
 }
