@@ -1,16 +1,19 @@
-# 💸 Expense Tracker
+# 💸 Expenses Tracker
 
 ## 🎯 Project Details
 
-### 💸 Expense Tracker V.1 & 🎯 Description
+### 💸 Expenses Tracker V.1 & 🎯 Description
 
-Expense Tracker V.1 adalah project sederhana untuk belajar fundamental JavaScript (Vanilla) berbasis project berupa aplikasi pencatat pengeluaran harian.
-Fokus utamanya untuk melatih pemahaman mengenai konsep-konsep dasar JS seperti variabel, operator, function, object, array, loop, dan control flow, sambil melatih logika berpikir komputasional.
+Expenses Tracker V.1 adalah project sederhana untuk belajar fundamental
+JavaScript (Vanilla) berbasis project berupa aplikasi pencatat pengeluaran
+harian. Fokus utamanya untuk melatih pemahaman mengenai konsep-konsep dasar JS
+seperti variabel, operator, function, object, array, loop, dan control flow,
+sambil melatih logika berpikir komputasional.
 
 Versi pertama (V.1) ini sengaja dibatasi pada level paling sederhana:
 
 - Data hanya ada di memory (hilang setelah reload).
-- Lingkupnya cuma daily expense recap.
+- Lingkupnya cuma daily expenses recap.
 - Tidak ada backend, API, atau persistent storage.
 
 ### 📌 Spesifikasi V.1
@@ -50,7 +53,7 @@ const dailyExpenses = [
     price: 20000, // Harga per unit (number, > 0)
     quantity: 2, // Jumlah unit/barang (number, > 0)
     date: '2025-09-28T12:30:00', // ISO string (date, untuk sorting/filter pada V.2)
-    category: 'Makanan', // Kategori dari barang/jasa (string, tidak boleh kosong)
+    category: 'Food', // Kategori dari barang/jasa (string, tidak boleh kosong)
   },
   {
     id: 2,
@@ -58,7 +61,7 @@ const dailyExpenses = [
     price: 15000,
     quantity: 1,
     date: '2025-09-28T15:00:00',
-    category: 'Minuman',
+    category: 'Drink',
   },
 ];
 ```
@@ -80,12 +83,13 @@ const dailyExpenses = [
 
 ### 🚀 Roadmap — Steps to Complete V.1
 
-Catatan: V.1 adalah Main Output dari Topic-1: JavaScript Basics.
-Roadmap ini incremental (Step-1 → Step-5).
+Catatan: V.1 adalah Main Output dari Topic-1: JavaScript Basics. Roadmap ini
+incremental (Step-1 → Step-5).
 
 - Step-1 — Project Setup
 
-  - Setup repo, struktur file (index.html, style.css, app.js), Node & VSCode ready.
+  - Setup repo, struktur file (index.html, style.css, app.js), Node & VSCode
+    ready.
   - Buat console.log("Hello World").
 
 - Step-2 — Add Expense (form → memory)
@@ -126,7 +130,10 @@ Roadmap ini incremental (Step-1 → Step-5).
 
 ### ✅ Manfaat & Keunikan
 
-- Simple but scalable: walaupun cuma daily recap, strukturnya gampang di-upgrade ke weekly/monthly (V.2 & V.3).
-- Low entry barrier: bisa jalan hanya dengan browser & editor (no backend, no API).
-- Latihan nyata: bikin project yang relevan dengan kehidupan sehari-hari (nyatet pengeluaran).
+- Simple but scalable: walaupun cuma daily recap, strukturnya gampang di-upgrade
+  ke weekly/monthly (V.2 & V.3).
+- Low entry barrier: bisa jalan hanya dengan browser & editor (no backend, no
+  API).
+- Latihan nyata: bikin project yang relevan dengan kehidupan sehari-hari (nyatet
+  pengeluaran).
 - Focus on fundamentals: ngasah logic & JS dasar tanpa distraksi teknologi lain.

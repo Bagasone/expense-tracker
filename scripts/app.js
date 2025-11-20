@@ -5,7 +5,16 @@ window.addEventListener('load', () => {
 
 /* Variables */
 // Data store
-const dailyExpenses = [];
+const dailyExpenses = [
+  {
+    id: Date.now(),
+    name: 'Pizza',
+    price: 150_000,
+    qty: 3,
+    date: new Date(),
+    category: 'food',
+  },
+];
 
 /* DOM variables */
 // Info expenses
@@ -17,6 +26,7 @@ const categoryExpense = document.getElementById('expense-category');
 const quantityExpense = document.getElementById('expense-quantity');
 const priceExpense = document.getElementById('expense-price');
 const btnAddExpense = document.querySelector('.btn-add');
+const errorMessage = document.querySelector('.error-msg');
 
 // Variables form edit
 const modalEdit = document.getElementById('modal-edit');
@@ -26,6 +36,7 @@ const quantityEdited = document.getElementById('edited-quantity');
 const priceEdited = document.getElementById('edited-price');
 const btnSave = document.querySelector('.btn-save');
 const btnClose = document.querySelector('.btn-close');
+const errorMessageEdited = document.querySelector('.modal-edit .error-msg');
 
 // Lists
 const lists = document.querySelector('.lists');
@@ -84,7 +95,7 @@ function addExpense() {
     date: new Date(),
   };
 
-  if (filterInputs(expenseData)) {
+  if (inputValidations(expenseData, errorMessage)) {
     dailyExpenses.push(expenseData);
 
     renderExpenses();
@@ -123,7 +134,10 @@ function updateExpense(id) {
   };
 
   // It there is expense and input is valid
-  if (expenseIndex !== -1 || filterInputs(updatedData)) {
+  if (
+    expenseIndex !== -1 &&
+    inputValidations(updatedData, errorMessageEdited)
+  ) {
     dailyExpenses[expenseIndex] = {
       ...dailyExpenses[expenseIndex],
       ...updatedData,
@@ -195,27 +209,28 @@ function generateListItem({ name, category, qty, price, date, id }) {
         </li>`;
 }
 
-function filterInputs({ name, category, qty, price }) {
+function inputValidations({ name, category, qty, price }, element) {
   if (name.trim() === '') {
-    alert('Expense name cannot be empty');
+    element.innerHTML = 'Expense name should not empty!';
     return false;
   }
 
   if (category === '') {
-    alert('Pick one category');
+    element.innerHTML = 'You should pick one category!';
     return false;
   }
 
   if (qty.trim() === '' || isNaN(qty) || Number(qty) <= 0) {
-    alert('Quantity must be a positive number');
+    element.innerHTML = 'Quantity must be a positive number';
     return false;
   }
 
   if (price.trim() === '' || isNaN(price) || Number(price) <= 0) {
-    alert('Price must be a positive number');
+    element.innerHTML = 'Price must be a positive number';
     return false;
   }
 
+  element.innerHTML = '';
   return true;
 }
 

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker V.1</title>
+    <title>Expenses Tracker V.1</title>
     <meta name="author" content="Bagas Saputra">
-    <meta name="description" content="A simple expense tracker application to manage your finances.">
+    <meta name="description" content="A simple expenses tracker application to manage your finances.">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles/index.css">
@@ -27,9 +27,9 @@
         <!-- Header start -->
         <header class="header">
             <div class="icon-container logo border shadow-md">
-                <img src="assets/wallet-svgrepo-com.svg" alt="Expense Tracker Logo" class="icon">
+                <img src="assets/wallet-svgrepo-com.svg" alt="Expenses Tracker Logo" class="icon">
             </div>
-            <h1 class="title">Expense Tracker</h1>
+            <h1 class="title">Expenses Tracker</h1>
             <p class="desc">
                 Track your daily expenses with style! Add, edit, and manage your spending in oneplace.
             </p>
@@ -65,31 +65,37 @@
                     <div class="form-group">
                         <label for="expense-name" class="form-label">Expense Name</label>
                         <input type="text" id="expense-name" class="form-input border shadow-sm"
-                            placeholder="Enter expense name">
+                            placeholder="Enter expense name" required>
                     </div>
                     <div class="form-group">
                         <label for="expense-category" class="form-label">Category</label>
-                        <select type="text" id="expense-category" class="form-input border shadow-sm">
+                        <select type="text" id="expense-category" class="form-input border shadow-sm" required>
                             <option selected disabled value="">Select category</option>
                             <option value="food">Food</option>
+                            <option value="drink">Drink</option>
                             <option value="transport">Transport</option>
                             <option value="shopping">Shopping</option>
                             <option value="entertainment">Entertainment</option>
                             <option value="bills">Bills</option>
                             <option value="health">Health</option>
+                            <option value="work">Work</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="edited-quantity" class="form-label">Quantity</label>
-                        <input type="number" id="expense-quantity" class="form-input border shadow-sm" placeholder="1">
+                        <input type="number" id="expense-quantity" class="form-input border shadow-sm" placeholder="1"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="expense-price" class="form-label">Price (Rp)</label>
                         <input type="number" id="expense-price" class="form-input border shadow-sm"
-                            placeholder="Rp 0.00">
+                            placeholder="Rp 0.00" required>
                     </div>
-                    <button class="btn form-btn btn-add border shadow-md" type="submit">
+                    <div class="error-msg-container">
+                        <span class="error-msg"></span>
+                    </div>
+                    <button class="btn form-btn btn-add border shadow-md">
                         <i class="bi bi-plus-circle-fill"></i>
                         Add Expense
                     </button>
@@ -120,11 +126,11 @@
                 <div class="form-group">
                     <label for="edited-name" class="form-label">Expense Name</label>
                     <input type="text" id="edited-name" class="form-input border shadow-sm"
-                        placeholder="Enter expense name">
+                        placeholder="Enter expense name" required>
                 </div>
                 <div class="form-group">
                     <label for="edited-category" class="form-label">Category</label>
-                    <select type="text" id="edited-category" class="form-input border shadow-sm">
+                    <select type="text" id="edited-category" class="form-input border shadow-sm" required>
                         <option value="food">Food</option>
                         <option value="transport">Transport</option>
                         <option value="shopping">Shopping</option>
@@ -136,11 +142,16 @@
                 </div>
                 <div class="form-group">
                     <label for="edited-quantity" class="form-label">Quantity</label>
-                    <input type="number" id="edited-quantity" class="form-input border shadow-sm" placeholder="1">
+                    <input type="number" id="edited-quantity" class="form-input border shadow-sm" placeholder="1"
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="edited-price" class="form-label">Price (Rp)</label>
-                    <input type="text" id="edited-price" class="form-input border shadow-sm" placeholder="Rp 0.00">
+                    <input type="text" id="edited-price" class="form-input border shadow-sm" placeholder="Rp 0.00"
+                        required>
+                </div>
+                <div class="error-msg-container">
+                    <span class="error-msg"></span>
                 </div>
                 <button class="btn btn-save form-btn border shadow-md" type="submit">
                     <i class="bi bi-floppy-fill"></i>

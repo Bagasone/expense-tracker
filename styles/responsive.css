@@ -142,6 +142,13 @@
     font-size: var(--size-xl);
 }
 
+.error-msg {
+    font-size: var(--size-base);
+    font-weight: 700;
+
+    color: var(--clr-tomato);
+}
+
 /* List Expenses */
 .lists-container {
     display: flex;
@@ -387,6 +394,10 @@
         font-size: var(--size-2xl);
     }
 
+    .error-msg {
+        font-size: var(--size-lg);
+    }
+
     /* List Expenses */
     .lists-container {
         gap: var(--size-lg);
@@ -555,6 +566,11 @@
     .main .form-btn i {
         font-size: var(--size-3xl);
     }
+
+    .error-msg {
+        font-size: var(--size-xl);
+    }
+
 
     /* List Expenses */
     .lists-container {
