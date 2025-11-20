@@ -5,24 +5,7 @@ window.addEventListener('load', () => {
 
 /* Variables */
 // Data store
-const dailyExpenses = [
-  {
-    id: Date.now(),
-    name: 'Coffee',
-    category: 'food',
-    qty: 3,
-    price: 10_000,
-    date: new Date(),
-  },
-  {
-    id: Date.now() + 1,
-    name: 'Pizza',
-    category: 'food',
-    qty: 2,
-    price: 100_000,
-    date: new Date(),
-  },
-];
+const dailyExpenses = [];
 
 /* DOM variables */
 // Info expenses
@@ -152,22 +135,17 @@ function updateExpense(id) {
 }
 
 function renderExpenses() {
-  if (dailyExpenses.length === 0) {
-    lists.innerHTML = `
-    <div class="border empty-card shadow-md">
-      <p class="empty">No expenses</p>
-    </div>
-    `;
-  } else {
+  if (!isExpensesEmpty(dailyExpenses)) {
     renderListsItem();
+    calculateTotal();
   }
-  calculateTotal();
 }
 
 function deleteExpense(id) {
   const confirmDelete = confirm(
     'Are you sure you want to delete this expense?'
   );
+
   if (confirmDelete) {
     const expenseIndex = dailyExpenses.findIndex(
       (expense) => expense.id === Number(id)
@@ -242,17 +220,12 @@ function filterInputs({ name, category, qty, price }) {
 }
 
 function calculateTotal() {
-  if (dailyExpenses.length === 0) {
-    console.log('true');
-    infoExpenses.innerHTML = 'No Expenses Today';
-  } else {
-    const totalExpenses = dailyExpenses.reduce(
-      (total, item) => (total += item.price * item.qty),
-      0
-    );
+  const totalExpenses = dailyExpenses.reduce(
+    (total, item) => (total += item.price * item.qty),
+    0
+  );
 
-    infoExpenses.innerHTML = currencyFormat(totalExpenses);
-  }
+  infoExpenses.innerHTML = currencyFormat(totalExpenses);
 }
 
 function closeModal() {
@@ -265,6 +238,18 @@ function clearInputs() {
   categoryExpense.value = '';
   priceExpense.value = '';
   quantityExpense.value = '';
+}
+
+function isExpensesEmpty(dailyExpenses) {
+  if (dailyExpenses.length === 0) {
+    infoExpenses.innerHTML = 'No Expenses';
+    lists.innerHTML = `
+    <div class="border empty-card shadow-md">
+      <p class="empty">No expenses</p>
+    </div>
+    `;
+    return true;
+  }
 }
 
 // Formats function

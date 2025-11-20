@@ -84,6 +84,11 @@
     font-weight: 700;
 
     margin: var(--size-xxs) 0;
+
+    white-space: wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 15ch;
 }
 
 .main .info__amount {
@@ -164,23 +169,30 @@
     /* Variables */
     --gap: var(--size-xl);
     --space: var(--size-vxs);
-    --max-height: calc(var(--size-10xl) + 50%);
+    --max-height: calc(var(--size-10xl) + 20vh);
+    --max-width: calc(var(--size-10xl) + 50%);
     --parent-height: calc(50vh + var(--gap) * 2);
 
     /* Styles */
     width: 100%;
-    height: max-content;
+    height: 100%;
     max-height: var(--parent-height);
+
     gap: var(--gap);
+    justify-content: center;
+    align-items: center;
 
     padding: var(--space) calc((var(--space) * 2));
 
-    scrollbar-width: none;
     overflow: scroll;
+    scrollbar-width: none;
 }
 
 .list-item {
     max-height: var(--max-height);
+    max-width: var(--max-width);
+
+    overflow: hidden;
 }
 
 .list-name {
@@ -203,6 +215,16 @@
     font-size: var(--size-lg);
 
     margin-bottom: var(--size-vxs);
+}
+
+.list-name,
+.list-qty,
+.list-price,
+.list-total {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
 }
 
 /* Edit card */
@@ -286,7 +308,7 @@
 }
 
 .empty {
-    font-size: var(--size-2xl);
+    font-size: var(--size-lg);
     font-weight: 800;
 
     text-align: center;
@@ -379,8 +401,7 @@
     .lists {
         --gap: var(--size-2xl);
         --space: var(--size-xxs);
-        --max-height: calc(var(--size-10xl) + 50%);
-        --parent-height: calc(55vh + var(--gap) * 2);
+        --parent-height: calc(50vh + var(--gap) * 2);
     }
 
     .list-name {
@@ -407,34 +428,24 @@
 
     /* Edit card */
     .modal-edit {
-        padding: var(--size-sm) var(--size-base);
-
         width: 80%;
     }
 
     .modal-edit .form-title {
         gap: var(--size-base);
 
-        font-size: var(--size-4xl);
+        font-size: var(--size-3xl);
     }
 
     .modal-edit .form-title .icon,
     .modal-edit .btn-close {
         width: var(--size-5xl);
         height: var(--size-5xl);
-
-        padding: var(--size-vxs);
-        margin: var(--size-sm) 0;
     }
 
     .modal-edit .btn-close {
         width: calc(var(--size-5xl) - var(--size-xxs));
         height: calc(var(--size-5xl) - var(--size-xxs));
-
-        font-size: var(--size-xl);
-
-        right: var(--size-sm);
-        top: 0;
     }
 
     .modal-edit .form-label {
@@ -455,7 +466,7 @@
     }
 
     .empty {
-        font-size: var(--size-3xl);
+        font-size: var(--size-xl);
     }
 }
 
@@ -523,7 +534,7 @@
     }
 
     .main .form-label {
-        font-size: var(--size-2xl);
+        font-size: var(--size-xl);
     }
 
     .main .form-input {
@@ -559,7 +570,6 @@
     .lists {
         --gap: var(--size-3xl);
         --space: var(--size-xs);
-        --max-height: calc(var(--size-10xl) + 50%);
         --parent-height: calc(60vh + var(--gap) * 2);
 
         display: grid;
@@ -590,9 +600,7 @@
 
     /* Edit card */
     .modal-edit {
-        padding: var(--size-sm) var(--size-base);
-
-        width: 80%;
+        width: 70%;
     }
 
     .modal-edit .form-container {
@@ -600,43 +608,12 @@
     }
 
     .modal-edit .form-title {
-        gap: var(--size-base);
-
         grid-column: span 2;
 
         font-size: var(--size-4xl);
     }
 
-    .modal-edit .form-title .icon,
-    .modal-edit .btn-close {
-        width: var(--size-5xl);
-        height: var(--size-5xl);
-
-        padding: var(--size-vxs);
-        margin: var(--size-sm) 0;
-    }
-
-    .modal-edit .btn-close {
-        width: calc(var(--size-5xl) - var(--size-xxs));
-        height: calc(var(--size-5xl) - var(--size-xxs));
-
-        font-size: var(--size-xl);
-
-        right: var(--size-sm);
-        top: 0;
-    }
-
-    .modal-edit .form-label {
-        font-size: var(--size-lg);
-    }
-
-    .modal-edit .form-input {
-        font-size: var(--size-lg);
-    }
-
     .modal-edit .form-btn {
-        font-size: var(--size-xl);
-
         grid-column: span 2;
     }
 
@@ -648,7 +625,7 @@
     }
 
     .empty {
-        font-size: var(--size-4xl);
+        font-size: var(--size-2xl);
     }
 }
 
@@ -671,7 +648,6 @@
 
     .header .desc {
         font-size: var(--size-2xl);
-        width: 90%;
     }
 
     /* Main */
@@ -695,7 +671,7 @@
 
     /* Form Expenses */
     .main .form-label {
-        font-size: var(--size-3xl);
+        font-size: var(--size-2xl);
     }
 
     .main .form-container .icon-container {
@@ -722,7 +698,6 @@
     .lists {
         --gap: var(--size-3xl);
         --space: var(--size-xs);
-        --max-height: calc(var(--size-10xl) + 50%);
         --parent-height: calc(100vh + var(--gap) * 2);
 
         display: grid;
@@ -737,6 +712,24 @@
     }
 
     .empty {
-        font-size: var(--size-5xl);
+        font-size: var(--size-3xl);
+    }
+
+    /* Modal */
+    .modal-edit {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1448px) {
+    #root {
+        gap: var(--size-6xl);
+
+        padding: var(--size-6xl) calc(var(--size-10xl) * 2);
+    }
+
+    /* Modal */
+    .modal-edit {
+        width: 50%;
     }
 }
